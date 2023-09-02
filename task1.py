@@ -1,17 +1,18 @@
 #check if prime number:
 def prime(num):
-    if num <= 1: #num has to be greater than 1
-        return False
-    if num <= 3: #2,3 are prime num
-        return True
-    if num % 2 == 0 or num % 3 == 0: 
-        return False
-    i = 5
-    while i * i <= num:
-        if num % i == 0 or num % (i + 2) == 0:
-            return False
-        i += 6
-    return True
+    flag = False
+    if num == 1:
+        flag = False
+    elif (num > 2):
+        for i in range(2, num):
+            if (num % i) == 0:
+                flag = False
+                break
+            else:
+                flag = True
+    elif (num == 2):
+        flag = True
+    return flag
 
 #find divisors:
 def div(n):
